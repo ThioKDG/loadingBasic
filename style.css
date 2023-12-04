@@ -13,3 +13,7 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   height:100%;
   background-color:coral;
 }
+
+@keyframes loadingEnd {
+  0%{transform: translateY(-100px);}  
+}
