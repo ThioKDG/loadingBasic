@@ -5,32 +5,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="include.js"></script>
     <title>로딩페이지 구현해보기</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="loadScreen">
-        
+
     </div>
+    <section id="mainSection">
+        <h3>페이지</h3>
+    </section>
 </body>
 <script>
     /* Ajax 이용하여 파일 include */
-    fetch("loading.html").then(response => {
-        return response.text()
-    }).then(data => {
-        document.querySelector("#loadScreen").innerHTML = data;
-    });
+    window.onload(
+        fetch("loading.html").then(response => {
+            return response.text()
+        }).then(data => {
+            document.querySelector("#loadScreen").innerHTML = data;
+            
+            const backScreen = Array.from(document.querySelectorAll('#loadScreen p'));
+            
+            if(backScreen.length > 0){
+                console.log(backScreen);
+                setInterval(() => {
+                    backScreen.forEach((item) => {
+                        item.classList.add('endLoading');
+                        // backScreen.forEach(e => {
+                        //     e.classList.remove('endLoading');
+                        // })
+                    });
+                    
+                }, 3000);
+            }    
+        })
+    )
     
+
     /* onload 사용하여 로딩페이지 구현 */
-    const loading_screen = document.querySelector('#loadScreen');
+    // const loading_screen = document.querySelector('#loadScreen');
     
-    window.onload = () => {
-        setInterval(() => {
-            loading_screen.style.display='none'         
-        }, 3000);
-    }
 </script>
 
 </html>
