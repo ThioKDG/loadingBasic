@@ -15,9 +15,10 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   height:100%;
   background-color:coral;
 }
-.loadingBg .endLoading{
+
+.loadingBg.endLoading{
   transform: translateY(-1000px);
-  transition: .5s ease;
+  transition: 4s ease;
 }
 
 #mainSection{

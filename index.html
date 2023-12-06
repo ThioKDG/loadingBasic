@@ -32,6 +32,9 @@
                 setInterval(() => {
                     backScreen.forEach((item) => {
                         item.classList.add('endLoading');
+                        setInterval(() => {
+                            item.style.display = 'none';
+                        }, 3000);
                         // backScreen.forEach(e => {
                         //     e.classList.remove('endLoading');
                         // })
